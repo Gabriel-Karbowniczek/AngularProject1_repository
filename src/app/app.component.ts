@@ -29,7 +29,14 @@ export class AppComponent implements OnInit{
   }
 
   openAddEditPiesForm(){
-    this._dialog.open(PiesAddEditComponent)
+    const dialogRef = this._dialog.open(PiesAddEditComponent);
+    dialogRef.afterClosed().subscribe({
+      next: (val) =>{
+        if(val){
+          this.getPiesList();
+        }
+      }
+    })
   }
 
   getPiesList(){
@@ -50,6 +57,16 @@ export class AppComponent implements OnInit{
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  deletePies(id: number){
+    this._piesService.deletePies(id).subscribe({
+      next: (res) =>{
+        alert('Succesfully deleted');
+        this.getPiesList();
+      },
+      error: console.log
+    })
   }
 }
 

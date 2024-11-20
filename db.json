@@ -30,13 +30,6 @@
       "Race": "test2",
       "Date_of_Birth": "2024-11-12T23:00:00.000Z",
       "id": 2
-    },
-    {
-      "Id_of_Owner": "3",
-      "Name": "test3",
-      "Race": "test3",
-      "Date_of_Birth": "2024-11-13T23:00:00.000Z",
-      "id": 3
     }
   ]
 }

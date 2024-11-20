@@ -16,4 +16,8 @@ export class PiesService {
   getPiesList(): Observable<any>{
     return this._http.get('http://localhost:3000/pies');
   }
+
+  deletePies(id: number): Observable<any>{
+    return this._http.delete(`http://localhost:3000/pies/${id}`);
+  }
 }

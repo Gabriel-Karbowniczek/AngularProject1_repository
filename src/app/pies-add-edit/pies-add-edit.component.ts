@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { PiesService } from '../services/pies.service';
-import { DialogRef } from '@angular/cdk/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-pies-add-edit',
@@ -14,7 +14,7 @@ export class PiesAddEditComponent {
   constructor(
     private _fb: FormBuilder,
     private _piesService: PiesService,
-    private _dialogRef: DialogRef<PiesAddEditComponent>
+    private _dialogRef: MatDialogRef<PiesAddEditComponent>
   ){
     this.piesForm = this._fb.group({
       Id_of_Owner: '',
@@ -29,7 +29,7 @@ export class PiesAddEditComponent {
       this._piesService.addPies(this.piesForm.value).subscribe({
         next: (val: any) => {
           alert('Added Successfully');
-          this._dialogRef.close();
+          this._dialogRef.close(true);
         },
         error: (err: any) =>{
           console.error(err);
