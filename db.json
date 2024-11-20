@@ -1,0 +1,42 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "pies": [
+    {
+      "Id_of_Owner": 1,
+      "Name": "test",
+      "Race": "test",
+      "Date_of_Birth": "2024-11-11T23:00:00.000Z",
+      "id": 1
+    },
+    {
+      "Id_of_Owner": 2,
+      "Name": "test2",
+      "Race": "test2",
+      "Date_of_Birth": "2024-11-12T23:00:00.000Z",
+      "id": 2
+    },
+    {
+      "Id_of_Owner": "3",
+      "Name": "test3",
+      "Race": "test3",
+      "Date_of_Birth": "2024-11-13T23:00:00.000Z",
+      "id": 3
+    }
+  ]
+}
