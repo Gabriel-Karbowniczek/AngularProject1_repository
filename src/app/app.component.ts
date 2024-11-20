@@ -7,6 +7,7 @@ import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { CoreService } from './core/services/core.service';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,9 @@ export class AppComponent implements OnInit{
   @ViewChild(MatSort) sort!: MatSort;
 
   // switchValue = 'material';
-  constructor(private _dialog: MatDialog, private _piesService: PiesService){}
+  constructor(private _dialog: MatDialog,
+    private _piesService: PiesService,
+    private _coreService: CoreService){}
 
   ngOnInit(): void {
     this.getPiesList();
@@ -62,10 +65,24 @@ export class AppComponent implements OnInit{
   deletePies(id: number){
     this._piesService.deletePies(id).subscribe({
       next: (res) =>{
-        alert('Succesfully deleted');
+        this._coreService.openSnackBar('Succesfully deleted','done')
         this.getPiesList();
       },
       error: console.log
+    })
+  }
+
+  openEditForm(data: any){
+    const dialogRef = this._dialog.open(PiesAddEditComponent, {
+      data,
+    });
+
+    dialogRef.afterClosed().subscribe({
+      next: (val) =>{
+        if(val){
+          this.getPiesList();
+        }
+      }
     })
   }
 }

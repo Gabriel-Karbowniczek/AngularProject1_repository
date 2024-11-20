@@ -19,16 +19,16 @@
   "pies": [
     {
       "Id_of_Owner": 1,
-      "Name": "test",
-      "Race": "test",
-      "Date_of_Birth": "2024-11-11T23:00:00.000Z",
+      "Name": "Kazik",
+      "Race": "beagle",
+      "Date_of_Birth": "2019-05-19T22:00:00.000Z",
       "id": 1
     },
     {
       "Id_of_Owner": 2,
-      "Name": "test2",
-      "Race": "test2",
-      "Date_of_Birth": "2024-11-12T23:00:00.000Z",
+      "Name": "Miki",
+      "Race": "corgi",
+      "Date_of_Birth": "2020-08-12T22:00:00.000Z",
       "id": 2
     }
   ]
